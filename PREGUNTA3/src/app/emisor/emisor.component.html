@@ -1,5 +1,12 @@
 <div class="caixa">
     <h2>Emisor</h2>
-    <input type="text">
-    <button>Enviar</button>
+    <!-- ========== ITEM 2a: Input con two-way binding ==========
+         [(ngModel)]="textoInput" sincroniza el valor del input con la variable TypeScript
+    -->
+    <input type="text" [(ngModel)]="textoInput" placeholder="Escribe un mensaje">
+    
+    <!-- ========== ITEM 2b: Botón que llama a enviar() ==========
+         (click)="enviar()" ejecuta el método que actualiza el mensaje en el servicio
+    -->
+    <button (click)="enviar()">Enviar</button>
 </div>
