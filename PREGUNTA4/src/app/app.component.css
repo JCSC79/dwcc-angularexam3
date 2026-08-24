@@ -1,0 +1,14 @@
+.contedor {
+    display: flex;
+}
+
+.barraLateral {
+    width: 200px;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+}
+
+.contido {
+    flex: 1;
+    padding: 20px;
+}
