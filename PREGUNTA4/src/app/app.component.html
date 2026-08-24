@@ -1,11 +1,31 @@
 <div class="contedor">
   <div class="barraLateral">
+    <!-- ========== ITEM 5: Checkbox con two-way binding y event binding ==========
+         - [(ngModel)]="acceso": Sincroniza el estado del checkbox con la variable acceso
+         - (change)="actualizarAcceso()": Guarda el valor en sessionStorage cada vez que cambia
+    -->
     <label for="toggle-acceso">Habilitar acceso privado:</label>
-    <input type="checkbox">
-    <button>PÚBLICO</button>
-    <button>PRIVADO</button>
-  </div>
-  <div class="contido">
+    <input type="checkbox" id="toggle-acceso" [(ngModel)]="acceso" (change)="actualizarAcceso()">
     
+    <!-- ========== ITEM 1 + 2: Botón PÚBLICO ==========
+         - (click)="irAPublico()": Navega a la ruta /publico
+         - Esta ruta NO tiene guard, así que siempre funciona
+    -->
+    <button (click)="irAPublico()">PÚBLICO</button>
+    
+    <!-- ========== ITEM 1 + 3: Botón PRIVADO ==========
+         - (click)="irAPrivado()": Intenta navegar a la ruta /privado
+         - El guard control-acceso verifica si acceso === true
+         - Si true → permite, si false → rechaza
+    -->
+    <button (click)="irAPrivado()">PRIVADO</button>
+  </div>
+  
+  <!-- ========== ITEM 2 + 3: RouterOutlet ==========
+       - Aquí se cargan los componentes PublicoComponent o PrivadoComponent
+       - Dependiendo de la ruta activa (/publico o /privado)
+  -->
+  <div class="contido">
+    <router-outlet></router-outlet>
   </div>
 </div>
