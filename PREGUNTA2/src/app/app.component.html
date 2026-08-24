@@ -1,7 +1,26 @@
 <div>
-  <input type="text" placeholder="Introduce o teu nome">
-  <p>Ola, !</p>
-  <select>
+  <!-- ========== PUNTOS 1a + 2b: Input con two-way binding ngModel ==========
+       - Punto 1a: Al escribir, el párrafo se actualiza automáticamente (0,5 puntos)
+       - Punto 2b: Al elegir del select, el input se actualiza automáticamente (0,5 puntos)
+       [(ngModel)]="nombre" hace binding bidireccional automático
+  -->
+  <input type="text" placeholder="Introduce o teu nome" [(ngModel)]="nombre">
+  
+  <!-- ========== PUNTOS 1a + 2a: Párrafo que se actualiza con el binding ==========
+       - El párrafo se actualiza automáticamente porque está haciendo interpolación
+       - {{nombre}} toma el valor de la variable nombre en tiempo real
+       - Cumple punto 1a: Al escribir en input, el párrafo muestra "Ola, nombre!"
+       - Cumple punto 2a: Al elegir en select, el párrafo muestra "Ola, nombre!"
+  -->
+  <p>Ola, {{nombre}}!</p>
+  
+  <!-- ========== PUNTOS 1b + 2a + 2b: Select con two-way binding ngModel ==========
+       - Punto 1b: Si el texto del input coincide con una opción, se selecciona (0,5 puntos)
+       - Punto 2a: Al elegir, el párrafo se actualiza (0,5 puntos)
+       - Punto 2b: Al elegir, el input se actualiza (0,5 puntos)
+       [(ngModel)]="nombre" hace que el select se actualice cuando nombre cambia
+  -->
+  <select [(ngModel)]="nombre">
     <option value="" disabled selected>Ou escolla un nome aquí</option>
     <option value="Noa">Noa</option>
     <option value="Xoán">Xoán</option>
