@@ -1,5 +1,10 @@
 <h1>Control da Personaxe</h1>
 <div class="xogo-contedor">
-    <div class="personaxe"></div>
+    <!-- ========== ITEM 1: Personaje posicionado en el centro del tablero ==========
+         [style.left.px]="posX": Vincula el CSS left con la variable posX
+         [style.top.px]="posY": Vincula el CSS top con la variable posY
+         Cuando posX o posY cambien, el personaje se mueve automáticamente
+    -->
+    <div class="personaxe" [style.left.px]="posX" [style.top.px]="posY"></div>
 </div>
 <p class="info">Usa as frechas do teclado para mover a personaxe</p>
