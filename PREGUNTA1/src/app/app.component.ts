@@ -16,7 +16,7 @@ export class AppComponent {
 
   // Variable para guardar la duración actual de la animación (en segundos)
   // La inicializamos con un valor por defecto que deberá coincidir con el CSS
-  duracionAnimacion: number = 2; // Asumiendo que en CSS es animation-duration: 2s
+  duracionAnimacion: number = 1; // Duración inicial de la animación (coincide con CSS)
 
   ngAfterViewInit(): void {
     // ngAfterViewInit es el ciclo de vida correcto para usar ViewChild
